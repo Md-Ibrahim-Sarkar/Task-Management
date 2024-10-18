@@ -1,10 +1,10 @@
 1. Project Analysis   --- done
 2. Boilerplate Install  --- done
-3. UI Design
-  3.1 Header Design
-  3.2 Banner Design
-  3.3 Table Design
-  3.4 Footer Design
+3. UI Design 
+  3.1 Header Design  ----done
+  3.2 Banner Design  --- done
+  3.3 Table Design  ----done
+  3.4 Footer Design  ---- done
 4. Modal Design 
 5. DarkMode Design
 6. Task Adding
