@@ -2,7 +2,7 @@ import { Button, Table } from 'flowbite-react';
 
 function TableRow() {
   return (
-    <Table.Row className="bg-white  text-black">
+    <Table.Row className="bg-white  text-black dark:text-white">
       <Table.Cell>1</Table.Cell>
       <Table.Cell>API Build</Table.Cell>
       <Table.Cell>Create an API by using laravel platform</Table.Cell>

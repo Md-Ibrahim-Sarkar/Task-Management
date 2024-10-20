@@ -1,3 +1,5 @@
+
+
 import Banner from "../Sections/Banner/Banner";
 import Footer from "../Sections/Footer/Footer";
 import Header from "../Sections/Header/Header"
@@ -14,6 +16,11 @@ function Layout() {
         <Banner />
         <TableBody />
         <Footer />
+
+        
+
+        
+        
       </div>
     </div>
   );
