@@ -31,12 +31,10 @@ function Header() {
           />
         ) : (
           <MdDarkMode
-            className="w-7 text-black"
+            className={`w-7 text-3xl cursor-pointer ${theme ? 'dark:text-white' : 'text-black'}`}
             onClick={() => setTheme(!theme)}
-            className={`text-3xl cursor-pointer  ${
-              theme ? 'dark:text-white' : ' text-black'
-            }`}
           />
+          
         )}
       </div>
     </div>

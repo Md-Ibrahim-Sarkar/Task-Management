@@ -19,14 +19,27 @@ function NoData() {
 
 function TableBody() {
 
-  const  [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
+  const [tasks, setTasks] = useState([])
+
+  let createHandler = (item) => {
+    let upDateData = [
+      ...tasks,
+      {
+        ...item,
+        id:tasks.length + 1,
+      },
+    ]
+    setTasks(upDateData.reverse())
+    
+  }
 
   return (
     <div>
       <div>
         <div className="flex gap-3 justify-end my-4">
           <Button onClick={ () => setOpenModal(true)} color="success">Add Task</Button>
-          <Button color="failure">Clear Tasks</Button>
+          <Button onClick={()=>{setTasks([])}} color="failure">Clear Tasks</Button>
         </div>
         <div className="border dark:border-slate-500 shadow rounded mb-24">
           <SearchTask />
@@ -41,15 +54,16 @@ function TableBody() {
                 <Table.HeadCell>Action</Table.HeadCell>
               </Table.Head>
               <Table.Body className="divide-y">
-                <TableRow />
-                <NoData />
+                {tasks.length == 0? <NoData />: tasks.map((item,index) => <TableRow key={item.id} tasksData={item} index={index} />)}
+                
+                
               </Table.Body>
             </Table>
           </div>
         </div>
       </div>
       {createPortal(
-        <ModalPopUp onOpenModal={openModal} closeOpenModal={setOpenModal} />,
+        <ModalPopUp onCreate={createHandler} onOpenModal={openModal} closeOpenModal={setOpenModal} />,
         document.getElementById('modal')
       )}
     </div>

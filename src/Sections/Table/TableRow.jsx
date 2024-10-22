@@ -1,13 +1,14 @@
 import { Button, Table } from 'flowbite-react';
 
-function TableRow() {
+function TableRow({ tasksData,index }) {
+  let {title, description,assignedTo,priority} = tasksData
   return (
     <Table.Row className="bg-white  text-black dark:text-white">
-      <Table.Cell>1</Table.Cell>
-      <Table.Cell>API Build</Table.Cell>
-      <Table.Cell>Create an API by using laravel platform</Table.Cell>
-      <Table.Cell>Nasrullah Mansur</Table.Cell>
-      <Table.Cell>Height</Table.Cell>
+      <Table.Cell>{index +1}</Table.Cell>
+      <Table.Cell>{title}</Table.Cell>
+      <Table.Cell>{description}</Table.Cell>
+      <Table.Cell>{assignedTo}</Table.Cell>
+      <Table.Cell>{priority}</Table.Cell>
       <Table.Cell>
         <a
           href="#"
